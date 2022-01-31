@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+{% block content %}
+<style>
+body{
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+}
+h1{
+    margin: 0 0 10px;
+    padding: 0;
+    color: #fff;
+    font-size: 24px;
+}
+.box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    transform: translate(-50%, -50%);
+}
+input{
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    box-sizing: border-box;
+    transition: .5s;
+}
+input[type="text"]{
+    background: #e3f2fd;
+    right: -300px;
+    width: 340px;
+    height: 50px;
+    color:black;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    border-radius:25px 0 0 25px;
+}
+input[type="submit"]{
+    position: relative;
+    right: -300px;
+    border-radius: 0 25px 25px 0;
+    width: 150px;
+    height: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #e3f2fd;
+    color:black;
+}
+input[type="submit"]:hover{
+    background: #ff5722;
+}
+</style>
+
+
+<form action="/Counters" method="post"> 
+    
+    <!-- <h2>Choose a champion to know his counters</h2> -->
+    <br>
+    <h5 style="color: black; text-align: center; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 40px;">Champions Counters</h5>
+    <label for="username"></label><br>
+    <input type="text" name="counters" id="counters" placeholder="Search the counters">
+    <input type="submit" value="Search">
+    
+    {% if champion %}
+    <p>
+    <body>
+        <br>
+        <table>
+            <tbody>
+                <tr>
+                    <td class ="grise"><h5>{{champion}}</h5></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+    </p>
+    {% endif %}
+    
+    {% if champion_1 %}
+    <p>
+        <table>
+            <tbody>
+                <tr>
+                    <td class ="grise"><h5>{{champion_1}}</h5></td>
+                </tr>
+            </tbody>
+        </table>
+    </p>
+    {% endif %}
+
+    <center><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e378b223-3e4a-4c17-bf3b-2823189b8ac0/d50jql7-98184d4e-5e72-409a-8c1b-2ff7963669f3.jpg/v1/fill/w_900,h_506,q_75,strp/league_of_legends_champion__s_by_nuked1-d50jql7.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl0sIm9iaiI6W1t7InBhdGgiOiIvZi9lMzc4YjIyMy0zZTRhLTRjMTctYmYzYi0yODIzMTg5YjhhYzAvZDUwanFsNy05ODE4NGQ0ZS01ZTcyLTQwOWEtOGMxYi0yZmY3OTYzNjY5ZjMuanBnIiwid2lkdGgiOiI8PTkwMCIsImhlaWdodCI6Ijw9NTA2In1dXX0.HUD0Sp4VVXQRMOs5bRcsaXdqGk9LTtXjKPI8-r2vFYs" width="900px" height="500px", class="center";></center>
+    <h5 style="color: black; text-align: center; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Here you have some choices</h5>
+ 
+</form>
+
+
+
+{% endblock %}

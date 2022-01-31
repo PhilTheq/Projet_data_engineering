@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}
+<br>
+<h5 style="color: black; text-align: center; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 40px;">Stats</h5>
+
+
+    
+{% if stats_blue %}
+<br>
+<p>
+<body>
+    <h3 style="color: black; text-align: center; left:50" >Blue Team vs. Red Team winrate statistics</h3>
+    <br>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Ranked solo/duo blue win</th>
+            <th scope="col">Ranked solo/duo red win</th>
+            <th scope="col">Ranked flex blue win</th>
+            <th scope="col">Ranked flex red win</th>
+            <th scope="col">Aram blue win</th>
+            <th scope="col">Aram red win</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{stats_blue[0]}}</td>
+            <td>{{stats_blue[1]}}</td>
+            <td>{{stats_blue[2]}}</td>
+            <td>{{stats_blue[3]}}</td>
+            <td>{{stats_blue[4]}}</td>
+            <td>{{stats_blue[5]}}</td>
+          </tr>
+        </tbody>
+      </table>
+</body>
+</p>
+<center><img src="https://cdna.artstation.com/p/assets/images/images/028/998/018/4k/lucas-parolin-a-bard-final-lucas-parolin-27april2020-sm.jpg?1596139939" width="800px" height="450px" style=" margin-bottom: 3%";></center>
+
+{% endif %}
+{% endblock %}
+
